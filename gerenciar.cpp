@@ -6,8 +6,12 @@
 #include <algorithm>
 
 #include "gerenciar.h"
-#include "automovel.h"
 #include "concessionaria.h"
+
+#include "veiculo.h"
+#include "automovel.h"
+#include "moto.h"
+#include "caminhao.h"
 
 using namespace std;
 using std::string;
@@ -38,7 +42,7 @@ concessionaria gerenciar::criarconcessionaria(){
 	cin >> cnpj; 
 
 	cout << "NOME:" << nome << endl;
-	concessionaria *novaConc = new concessionaria(nome,cnpj,listaConc);
+	concessionaria *novaConc = new concessionaria(nome,cnpj,listaConc_A,listaConc_M,listaConc_C);
 	statusConc status = inexistente;
 
 	for ( vector<concessionaria*>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it){

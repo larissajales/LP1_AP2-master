@@ -10,7 +10,6 @@
 #include "veiculo.h"
 #include "concessionaria.h"
 
-
 using namespace std;
 
 moto::moto(){

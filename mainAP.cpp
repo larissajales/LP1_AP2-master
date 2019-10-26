@@ -5,9 +5,13 @@
 #include <iterator>
 #include <algorithm>
 
+#include "veiculo.h"
 #include "gerenciar.h"
-#include "automovel.h"
 #include "concessionaria.h"
+
+#include "automovel.h"
+#include "moto.h"
+#include "caminhao.h"
 
 using namespace std;
 gerenciar listaConc;
@@ -19,9 +23,9 @@ int main (int argc, char const *argv[]){
 	int x = -1;
 	while (x!= 0){
 		cout << endl << "++++++++++++++++++++++++++++++++"<<endl
-		<< endl << "Escolha a opção desejada"<<endl
-		<< "Digite 1 - Adicionar Automóvel "<<endl
-		<< "Digite 2 - Criar Concessionária"<< endl
+		<< endl << "Escolha a opcao desejada"<<endl
+		<< "Digite 1 - Adicionar Automovel "<<endl
+		<< "Digite 2 - Criar Concessionaria"<< endl
 		<< "Digite 3 - Lista de Automoveis"<< endl
 		<< "Digite 0 - Sair"<< endl
 		<< "++++++++++++++++++++++++++++++++"<<endl

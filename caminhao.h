@@ -10,7 +10,7 @@
 #include <iterator>
 #include <algorithm>
 
-
+#include "veiculo.h"
 
 using namespace std;
 
