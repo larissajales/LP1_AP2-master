@@ -16,10 +16,12 @@
 using namespace std;
 
 concessionaria::concessionaria(){
+	nome = "";
+	cnpj = 0;
 
 }
 
-concessionaria::concessionaria(string nome_, int cnpj_, const vector<automovel*>lista_A,vector<moto*>lista_M,vector<caminhao*>lista_C){
+concessionaria::concessionaria(std::string nome_, int cnpj_, const vector<automovel*>lista_A, const vector<moto*>lista_M,const vector<caminhao*>lista_C){
 	nome = nome_;
 	cnpj = cnpj_;
 	listaConc_A = lista_A;
@@ -28,10 +30,6 @@ concessionaria::concessionaria(string nome_, int cnpj_, const vector<automovel*>
 	++(++numeroConc);
 }
 
-concessionaria::~concessionaria(){
-	--numeroConc;
-
-}
 
 
 string concessionaria::get_nome(){
@@ -51,10 +49,14 @@ bool concessionaria::add_carro(){
 	string chassi;
 	string marca;
 	double preco;
+	int motor;
+	int carga;
+	int modelo;
+	int escolha;
 	cout << endl << "-> informe o tipo de Veiculo:";
 	cout << endl << "-> automovel ........ 1";
 	cout << endl << "-> Moto.............. 2";
-	cout << endl << "-> Caminhao.......... 3";
+	cout << endl << "-> Caminhao.......... 3"<< endl;
 	cin >> escolha;
 	
 	
@@ -62,91 +64,88 @@ bool concessionaria::add_carro(){
 	if (escolha == 1){
 		cout << endl << "-> Digite os dados do carro";
 
-		cout << endl << "Numero do Chassi: ";
-		getline(cin,chassi);
+		cout << endl << "Numero do Chassi: "<< endl;
+		cin>>chassi;
 	
-		cout << endl << "Marca: ";
-		getline(cin,marca);
+		cout << endl << "Marca: "<< endl;
+		cin>>marca;
 	
-		cout << endl << "valor: ";	
+		cout << endl << "valor: "<< endl;	
 		cin >> preco;
 		
-		cout << endl << "Tipo do motor:\n(1 para gasolina, 2 para eletrico): ";	
+		cout << endl << "Tipo do motor:\n(1 para gasolina, 2 para eletrico): "<< endl;	
 		cin >> motor;
 		
 		automovel *autom = new automovel(marca, preco, chassi,motor);
 		
-		for (vector<automovel*>::iterator it = listaConc_A.begin(); it != listaConc_A.end(); ++it){
-			if (**it == *autom){
-				cout << endl << "Carro ja cadastrado. Operacao CANCELADA!" << endl;
-				return false;	
-			}
-		}
+		//for (vector<automovel*>::iterator it = listaConc_A.begin(); it != listaConc_A.end(); ++it){
+		//	if (**it == *autom){
+		//		cout << endl << "Carro ja cadastrado. Operacao CANCELADA!" << endl;
+		//		return false;	
+		//	}
+		//}
 		listaConc_A.push_back(autom);
 	
 	}
 	if (escolha == 2){
 		cout << endl << "-> Digite os dados do carro";
 
-		cout << endl << "Numero do Chassi: ";
-		getline(cin,chassi);
+		cout << endl << "Numero do Chassi: "<< endl;
+		cin>>chassi;
 	
-		cout << endl << "Marca: ";
-		getline(cin,marca);
+		cout << endl << "Marca: "<< endl;
+		cin>>marca;
 	
-		cout << endl << "valor: ";	
+	
+		cout << endl << "valor: "<< endl;	
 		cin >> preco;
 		
-		cout << endl << "Modelo:\n(1 para esportio, 2 para comum): ";	
+		cout << endl << "Modelo:\n(1 para esportio, 2 para comum): "<< endl;	
 		cin >> modelo;
 		
 		moto *autom = new moto(marca, preco, chassi,modelo);
 		
-		for (vector<moto*>::iterator it = listaConc_M.begin(); it != listaConc_M.end(); ++it){
-			if (**it == *autom){
-				cout << endl << "Moto ja cadastrada. Operacao CANCELADA!" << endl;
-				return false;	
-			}
-		}
+		//for (vector<moto*>::iterator it = listaConc_M.begin(); it != listaConc_M.end(); ++it){
+		//	if (**it == *autom){
+		//		cout << endl << "Moto ja cadastrada. Operacao CANCELADA!" << endl;
+		//		return false;	
+		//	}
+		//}
 		listaConc_M.push_back(autom);
 	}
 	if (escolha == 3){
 		cout << endl << "-> Digite os dados do carro";
 
-		cout << endl << "Numero do Chassi: ";
-		getline(cin,chassi);
+		cout << endl << "Numero do Chassi: "<< endl;
+		cin>>chassi;
 	
-		cout << endl << "Marca: ";
-		getline(cin,marca);
+		cout << endl << "Marca: "<< endl;
+		cin>>marca;
 	
-		cout << endl << "valor: ";	
+		cout << endl << "valor: "<< endl;	
 		cin >> preco;
 		
-		cout << endl << "Tipo da carga:\n(1 para normal, 2 para de risco): ";	
+		cout << endl << "Tipo da carga:\n(1 para normal, 2 para de risco): "<< endl;	
 		cin >> carga;
 		
 		caminhao *autom = new caminhao(marca, preco, chassi,carga);
 		
-		for (vector<caminhao*>::iterator it = listaConc_C.begin(); it != listaConc_C.end(); ++it){
-			if (**it == *autom){
-				cout << endl << "Caminhao ja cadastrado. Operacao CANCELADA!" << endl;
-				return false;	
-			}
-		}
+	//	for (vector<caminhao*>::iterator it = listaConc_C.begin(); it != listaConc_C.end(); ++it){
+	//		if (**it == *autom){
+	//			cout << endl << "Caminhao ja cadastrado. Operacao CANCELADA!" << endl;
+	//			return false;	
+	//		}
+	//	}
 		listaConc_C.push_back(autom);
 	}
 	else{
 		cout << endl << "Opcao invalida.\n\n";
-		add_carro()
+		add_carro();
 		
 	}
 	return true;
 }
 
-
-int concessionaria::estoque(){
-	return listaConc.size();
-}
 
 
    ostream& operator<<(ostream &o, concessionaria &concessionaria){
@@ -154,23 +153,17 @@ int concessionaria::estoque(){
 	{
 		o << (**i) << endl;
 	}
-	return o;
-}
-
-ostream& operator<<(ostream &o, concessionaria &concessionaria){
 	for (vector<moto*>::iterator i = concessionaria.listaConc_M.begin(); i != concessionaria.listaConc_M.end(); ++i)
 	{
 		o << (**i) << endl;
 	}
-	return o;
-}
-ostream& operator<<(ostream &o, concessionaria &concessionaria){
 	for (vector<caminhao*>::iterator i = concessionaria.listaConc_C.begin(); i != concessionaria.listaConc_C.end(); ++i)
 	{
 		o << (**i) << endl;
 	}
 	return o;
 }
+
 
 
 bool concessionaria::operator==(const concessionaria &conc) const{

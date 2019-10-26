@@ -13,28 +13,26 @@
 using namespace std;
 
 moto::moto(){
-	Marca = " ";
-	setMarca(Marca);
+	setMarca("");
 	setPreco(0);
-	chassi = " ";
-	setChassi(chassi);
+	setChassi("");
 	setModelo(0);
-	++numeroCarros;
+	//++numeroCarros;
 }
 
-moto::moto(string marca_, double preco_, string chassi_,int modelo_ ){
+moto::moto(string marca_, double preco_, string chassi_,int modelo_){
 	setMarca(marca_);
 	setPreco(preco_);
 	setChassi(chassi_);
 	setModelo(modelo_);
-	++numeroCarros;
+	//++numeroCarros;
 }
-moto::~moto(){
-	--numeroCarros;
-}
+//moto::~moto(){
+//	--numeroCarros;
+//}
 
 int moto::getModelo(){
-	return = modelo;
+	return modelo;
 }
 
 void moto::setModelo(int modelo_){
@@ -49,18 +47,18 @@ ostream& operator<< (ostream &o, moto &veiculo_){
 	return o;
 }
 
-bool automovel::operator==(const moto &autom) const {
-	if (this->marca == autom.marca){
-		return true;
-	} else {
-		return false;
-	}
-}
+//bool moto::operator==(const moto &autom) const {
+//	if (this->marca == autom.marca){
+//		return true;
+//	} else {
+//		return false;
+//	}
+//}
 
-bool automovel::operator==(const std::string &marca) const {
-	if (this->marca == marca){
-		return true;
-	} else {
-		return false;
-	}
-}
+//bool moto::operator==(const std::string &marca) const {
+//	if (this->marca == marca){
+//		return true;
+//	} else {
+//		return false;
+//	}
+//}

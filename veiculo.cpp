@@ -9,26 +9,23 @@
 #include "veiculo.h"
 
 
-void veiculo::getMarca(string marca_){
-	marca=marca_;
+string veiculo::setMarca(string marca_){
+	marca = marca_;
 }
-void veiculo::getPreco(double preco_){
+double veiculo::setPreco(double preco_){
 	preco = preco_;
 }
-void veiculo::getChassi(string chassi_){
+string veiculo::setChassi(string chassi_){
 	chassi = chassi_;
 }
 //**************************************************************************
-string veiculo::setMarca(){
-
+string veiculo::getMarca(){
 	return marca;
 }
-double veiculo::setPreco(){
+double veiculo::getPreco(){
 	return preco;
-
 }
-string veiculo::setChassi(){
-
+string veiculo::getChassi(){
 	return chassi;
 }
 

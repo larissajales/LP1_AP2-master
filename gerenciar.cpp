@@ -17,13 +17,8 @@ using namespace std;
 using std::string;
 using std::getline;
 
-gerenciar::gerenciar(){
-	listaLoja = {}; 
-}
 
-gerenciar::~gerenciar(){
-	
-}
+
 
 concessionaria gerenciar::criarconcessionaria(){
 	string nome;
@@ -121,26 +116,6 @@ bool gerenciar::estoques(){
 	cout << endl << "Concessionaria nao encontrada. Tente novamente." << endl;
 	return false;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -20,19 +20,19 @@ class caminhao : public veiculo{
 		
 
 	public: 
-		static int numeroCarros;
+		//static int numeroCarros;
 
 		caminhao();
 		caminhao(string marca, double preco, string chassi, int tipo_carga_);
 		~caminhao();
-		int setTipo_carga();
-		void getTipo_carga(int tipo_carga_);
+		int getTipo_carga();
+		void setTipo_carga(int tipo_carga_);
 
 		friend ostream& operator << (ostream &o, caminhao &veiculo);
 
-		bool operator==(const caminhao &cam) const;
+		//bool operator==(const caminhao &cam) const;
 
-		bool operator==(const string &marca) const;
+		//bool operator==(const string &marca) const;
 	
 };
 

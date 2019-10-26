@@ -26,9 +26,9 @@ class veiculo{
 		double getPreco();		 
 		string getChassi();
 		
-		void setMarca(string marca_); 
-		void setPreco(double preco_);
-		void setChassi(string chassi_);
+		string setMarca(std::string marca_); 
+		double setPreco(double preco_);
+		string setChassi(std::string chassi_);
 
 	
 };

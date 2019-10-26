@@ -13,13 +13,11 @@
 using namespace std;
 
 caminhao::caminhao(){
-	Marca = " ";
-	setMarca(Marca);
+	setMarca("");
 	setPreco(0);
-	chassi = " ";
-	setChassi(chassi);
+	setChassi("");
 	setTipo_carga(0);
-	++numeroCarros;
+	//++numeroCarros;
 }
 
 caminhao::caminhao(string marca_, double preco_, string chassi_,int tipo_carga_ ){
@@ -27,40 +25,40 @@ caminhao::caminhao(string marca_, double preco_, string chassi_,int tipo_carga_ 
 	setPreco(preco_);
 	setChassi(chassi_);
 	setTipo_carga(tipo_carga_);
-	++numeroCarros;
+	//++numeroCarros;
 }
-moto::~moto(){
-	--numeroCarros;
+//caminhao::~caminhao(){
+//	--numeroCarros;
+//}
+
+int caminhao::getTipo_carga(){
+	return tipo_carga;
 }
 
-int moto::getModelo(){
-	return = tipo_carga;
-}
-
-void moto::setModelo(int tipo_carga_){
-	modelo = tipo_carga_;
+void caminhao::setTipo_carga(int tipo_carga_){
+	tipo_carga = tipo_carga_;
 }
 
 ostream& operator<< (ostream &o, caminhao &veiculo_){
 	o << "> Marca: " << veiculo_.getMarca() << endl
 	  << "> Preco: " << veiculo_.getPreco() << endl
-	  << "> Tipo de carga: " << veiculo_.setTipo_carga()<< endl
+	  << "> Tipo de carga: " << veiculo_.getTipo_carga()<< endl
 	  << "> Numero do Chassi: " << veiculo_.getChassi() << endl;
 	return o;
 }
 
-bool automovel::operator==(const caminhao &autom) const {
-	if (this->marca == autom.marca){
-		return true;
-	} else {
-		return false;
-	}
-}
+//bool caminhao::operator==(const caminhao &autom) const {
+//	if (this->marca == autom.marca){
+//		return true;
+//	} else {
+//		return false;
+//	}
+//}
 
-bool automovel::operator==(const std::string &marca) const {
-	if (this->marca == marca){
-		return true;
-	} else {
-		return false;
-	}
-}
+//bool caminhao::operator==(const std::string &marca) const {
+//	if (this->marca == marca){
+//		return true;
+//	} else {
+//		return false;
+//	}
+//}

@@ -34,12 +34,10 @@ public:
 	concessionaria();
 
 	// destrutor
-	~concessionaria();
+//	~concessionaria();
 
 
-	concessionaria(string nome_, int cnpj_, const vector<automovel*>lista_A);
-	concessionaria(string nome_, int cnpj_, const vector<moto*>lista_M);
-	concessionaria(string nome_, int cnpj_, const vector<caminhao*>lista_C);
+	concessionaria(string nome_, int cnpj_, const vector<automovel*>lista_A,const vector<moto*>lista_M,const vector<caminhao*>lista_C);
 	
 	string get_nome();
 	int get_cnpj();

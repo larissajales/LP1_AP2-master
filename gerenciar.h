@@ -2,8 +2,6 @@
 #ifndef GERENCIAR_H
 #define GERENCIAR_H
 
-
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -25,8 +23,8 @@ private:
 	vector <concessionaria*> listaLoja;
 
 public:
-	gerenciar();
-	~gerenciar();
+	//gerenciar();
+	//~gerenciar();
 
 	concessionaria criarconcessionaria();
 
@@ -35,4 +33,4 @@ public:
 
 };
 
-#endif
+#endif 

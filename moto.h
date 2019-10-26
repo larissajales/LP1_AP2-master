@@ -9,7 +9,7 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
-
+#include "veiculo.h"
 
 
 using namespace std;
@@ -21,7 +21,7 @@ class moto : public veiculo{
 		static int numeroCarros;
 
 		moto();
-		moto(string marca, double preco, string chassi, int modelo,int modelo_);
+		moto(string marca, double preco, string chassi, int modelo_);
 		~moto();
 		int getModelo();
 		void setModelo(int modelo_);
@@ -29,9 +29,9 @@ class moto : public veiculo{
 
 		friend ostream& operator << (ostream &o, moto &veiculo_);
 
-		bool operator==(const moto &mot) const;
+		//bool operator==(const moto &mot) const;
 
-		bool operator==(const string &marca) const;
+		//bool operator==(const string &marca) const;
 	
 };
 

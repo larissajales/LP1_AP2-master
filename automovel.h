@@ -10,7 +10,7 @@
 #include <iterator>
 #include <algorithm>
 
-
+#include "veiculo.h"
 
 using namespace std;
 
@@ -20,19 +20,19 @@ class automovel : public veiculo{
 		
 
 	public: 
-		static int numeroCarros;
+		//static int numeroCarros;
 
 		automovel();
 		automovel(string marca, double preco, string chassi, int tipo_motor);
-		~automovel();
+		//~automovel();
 		int getTipo_motor();
 		void setTipo_motor(int motor_);
 
 		friend ostream& operator << (ostream &o, automovel &veiculo);
 
-		bool operator==(const automovel &autom) const;
+		//bool operator==(const automovel &autom) const;
 
-		bool operator==(const string &marca) const;
+		//bool operator==(const string &marca) const;
 	
 };
 

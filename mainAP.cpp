@@ -4,11 +4,9 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
-
 #include "veiculo.h"
 #include "gerenciar.h"
 #include "concessionaria.h"
-
 #include "automovel.h"
 #include "moto.h"
 #include "caminhao.h"
@@ -16,7 +14,7 @@
 using namespace std;
 gerenciar listaConc;
 
-int automovel::numeroCarros = 0;
+//int automovel::numeroCarros = 0;
 int concessionaria::numeroConc = 0;
 
 int main (int argc, char const *argv[]){
@@ -38,7 +36,7 @@ int main (int argc, char const *argv[]){
 					listaConc.cadastrarCarro();
 					break;
 			case 2: 
-					listaConc.criarconcessionaria ();
+					listaConc.criarconcessionaria();
 					break;
 			case 3:
 					listaConc.estoques();
