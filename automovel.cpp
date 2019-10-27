@@ -52,12 +52,12 @@ ostream& operator<< (ostream &o, automovel &veiculo){
 	return o;
 }
 ofstream& operator<< (ofstream &o, automovel &veiculo){
-	o << "\"\";\"\";\""<< veiculo.getMarca()<<"\";\"" << veiculo.getPreco()<<"\";\""<< veiculo.getChassi()<<"\";\"" << veiculo.getTipo_motor() <<"\"\";\"\";\"\""<< endl;
+	o << endl << ";;"<< veiculo.getMarca()<<";" << veiculo.getPreco()<<";"<< veiculo.getChassi()<<";" << veiculo.getTipo_motor() <<";;";
 	return o;
 }
 
 //bool automovel::operator==(const automovel &autom) const {
-//	if (this->getMarca = autom.gmarca
+//	if (this->getMarca = autom.getMarca())
 //		return true;
 //	} else {
 //		return false;
@@ -65,7 +65,7 @@ ofstream& operator<< (ofstream &o, automovel &veiculo){
 //}
 
 //bool automovel::operator==(const std::string &marca) const {
-//	if (this->getMarca == marca){
+//	if (this->getMarca() == marca){
 //		return true;
 //	} else {
 //		return false;

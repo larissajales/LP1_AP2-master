@@ -30,10 +30,7 @@ class veiculo{
 		void setPreco(double preco_);
 		void setChassi(string chassi_);
 		
-		bool operator==(const veiculo &autom) const;
 
-		bool operator==(const string &marca) const;
-		
 	
 };
 

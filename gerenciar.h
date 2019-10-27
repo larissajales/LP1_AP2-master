@@ -27,6 +27,7 @@ public:
 	//~gerenciar();
 
 	concessionaria criarconcessionaria();
+	concessionaria criarconcessionariaCSV();
 	
 	void salvarConcessionaria();
 	void cadastrarCarro();

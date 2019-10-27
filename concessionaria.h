@@ -46,7 +46,12 @@ public:
 
 	bool add_carro();
 	bool lista_carro();
+	bool add_automovel(string marca, double preco, string chassi,int motor);
+	bool add_moto(string marca, double preco, string chassi,int modelo);
+	bool add_caminhao(string marca, double preco, string chassi,int carga);
 	int estoque();
+	
+	
 	bool operator==(concessionaria a){
 		return a.get_cnpj() == cnpj;
 	}

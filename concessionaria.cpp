@@ -20,6 +20,7 @@ concessionaria::concessionaria(){
 	nome = "";
 	cnpj = 0;
 
+
 }
 
 concessionaria::concessionaria(std::string nome_, int cnpj_, const vector<automovel*>lista_A, const vector<moto*>lista_M,const vector<caminhao*>lista_C){
@@ -44,8 +45,21 @@ int concessionaria::get_cnpj(){
 	return cnpj; 
 }
 
-
-
+bool concessionaria::add_automovel(string marca, double preco, string chassi,int motor){
+		automovel *autom = new automovel(marca, preco, chassi,motor);		
+		listaConc_A.push_back(autom);
+		return true;
+}
+bool concessionaria::add_moto(string marca, double preco, string chassi,int modelo){	
+		moto *autom = new moto(marca, preco, chassi,modelo);
+		listaConc_M.push_back(autom);
+		return true;	
+}
+bool concessionaria::add_caminhao(string marca, double preco, string chassi,int carga){		
+		caminhao *autom = new caminhao(marca, preco, chassi,carga);
+		listaConc_C.push_back(autom);
+		return true;
+}
 bool concessionaria::add_carro(){
 	string chassi;
 	string marca;
@@ -78,6 +92,7 @@ bool concessionaria::add_carro(){
 		cin >> motor;
 		
 		automovel *autom = new automovel(marca, preco, chassi,motor);
+		
 		
 		//for (vector<automovel*>::iterator it = listaConc_A.begin(); it != listaConc_A.end(); ++it){
 		//	if (**it == *autom){
@@ -167,6 +182,14 @@ bool concessionaria::add_carro(){
 }
 ofstream& operator<<(ofstream &of, concessionaria &concessionaria){
 	for (vector<automovel*>::iterator i = concessionaria.listaConc_A.begin(); i != concessionaria.listaConc_A.end(); ++i)
+	{
+		of << (**i);
+	}
+	for (vector<moto*>::iterator i = concessionaria.listaConc_M.begin(); i != concessionaria.listaConc_M.end(); ++i)
+	{
+		of << (**i);
+	}
+	for (vector<caminhao*>::iterator i = concessionaria.listaConc_C.begin(); i != concessionaria.listaConc_C.end(); ++i)
 	{
 		of << (**i);
 	}

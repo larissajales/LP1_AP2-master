@@ -19,6 +19,7 @@ int concessionaria::numeroConc = 0;
 
 int main (int argc, char const *argv[]){
 	int x = -1;
+	int xx = 0;
 	while (x!= 0){
 		cout << endl << "++++++++++++++++++++++++++++++++"<<endl
 		<< endl << "Escolha a opcao desejada"<<endl	
@@ -34,8 +35,21 @@ int main (int argc, char const *argv[]){
 
 		switch (x){
 			case 1: 
-					listaConc.criarconcessionaria();
-					break;
+				cout << "Digite 1 - Criar Concessionaria do zero."<< endl
+					 << "Digite 2 - Criar Concessionaria a partir de um arquivo CSV."<< endl;
+					 cin >> xx;
+					 if (xx == 1){
+					 	listaConc.criarconcessionaria();
+					 	break;
+					 }
+					 if (xx == 2){
+					 	listaConc.criarconcessionariaCSV();
+					 	break;
+					 }
+					 else if(xx != 1 && xx !=2){
+					 	cout << "Entrada invalida, digite novamente."<< endl;
+					 	break;
+					 }					
 			case 2: 
 					listaConc.cadastrarCarro();
 					break;		
@@ -51,7 +65,7 @@ int main (int argc, char const *argv[]){
 			default:
 			cin.clear();
 			cin.ignore(200,'\n');
-			cout << endl << "Entrada inválida, digite novamente" <<endl;
+			cout << endl << "Entrada invalida, digite novamente" <<endl;
 		}
 	}
 	return 0;

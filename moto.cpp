@@ -48,13 +48,13 @@ ostream& operator<< (ostream &o, moto &veiculo_){
 	  << "> Numero do Chassi: " << veiculo_.getChassi() << endl;
 	return o;
 }
-ofstream& operator<< (ofstream &o, moto &veiculo){
-	o << "\"\";\"\";\""<< veiculo.getMarca()<<"\";\"" << veiculo.getPreco()<<"\";\""<< veiculo.getChassi()<<"\";\"\";" << veiculo.getModelo() <<"\""<< endl;
-	return o;
+ofstream& operator<< (ofstream &om, moto &veiculo_){
+	om << endl << ";;"<< veiculo_.getMarca()<<";" << veiculo_.getPreco()<<";"<< veiculo_.getChassi()<<";;" << veiculo_.getModelo() <<";";
+	return om;
 }
 
 //bool moto::operator==(const moto &autom) const {
-//	if (this->marca == autom.marca){
+//	if (this->getMarca() = autom.getMarca()){
 //		return true;
 //	} else {
 //		return false;
@@ -62,7 +62,7 @@ ofstream& operator<< (ofstream &o, moto &veiculo){
 //}
 
 //bool moto::operator==(const std::string &marca) const {
-//	if (this->marca == marca){
+//	if (this->getMarca() == marca){
 //		return true;
 //	} else {
 //		return false;

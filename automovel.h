@@ -31,9 +31,9 @@ class automovel : public veiculo{
 
 		friend ostream& operator << (ostream &o, automovel &veiculo);
 		friend ofstream& operator << (ofstream &o, automovel &veiculo);
-	//	bool operator==(const automovel &autom) const;
+		bool operator==(const automovel &autom) const;
 
-	//	bool operator==(const string &marca) const;
+		bool operator==(const string &marca) const;
 	
 };
 

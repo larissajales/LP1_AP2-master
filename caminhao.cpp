@@ -49,20 +49,20 @@ ostream& operator<< (ostream &o, caminhao &veiculo_){
 	return o;
 }
 ofstream& operator<< (ofstream &o, caminhao &veiculo){
-	o << "\"\";\"\";\""<< veiculo.getMarca()<<"\";\"" << veiculo.getPreco()<<"\";\""<< veiculo.getChassi()<<"\";\";\";\"" << veiculo.getTipo_carga() <<"\""<< endl;
+	o << endl << ";;"<< veiculo.getMarca()<<";" << veiculo.getPreco()<<";"<< veiculo.getChassi()<<";;;" << veiculo.getTipo_carga();
 	return o;
 }
 
 //bool caminhao::operator==(const caminhao &autom) const {
-//	if (this->marca == autom.marca){
-//		return true;
+//	if (this->getMarca() = autom.getMarca()){
+///		return true;
 //	} else {
 //		return false;
 //	}
 //}
 
 //bool caminhao::operator==(const std::string &marca) const {
-//	if (this->marca == marca){
+//	if (this->getMarca() == marca){
 //		return true;
 //	} else {
 //		return false;
