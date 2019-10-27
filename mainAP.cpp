@@ -21,10 +21,11 @@ int main (int argc, char const *argv[]){
 	int x = -1;
 	while (x!= 0){
 		cout << endl << "++++++++++++++++++++++++++++++++"<<endl
-		<< endl << "Escolha a opcao desejada"<<endl
-		<< "Digite 1 - Adicionar Automovel "<<endl
-		<< "Digite 2 - Criar Concessionaria"<< endl
+		<< endl << "Escolha a opcao desejada"<<endl	
+		<< "Digite 1 - Criar Concessionaria"<< endl
+		<< "Digite 2 - Adicionar Automovel "<<endl
 		<< "Digite 3 - Lista de Automoveis"<< endl
+		<< "Digite 4 - Salvar concessionaria"<< endl
 		<< "Digite 0 - Sair"<< endl
 		<< "++++++++++++++++++++++++++++++++"<<endl
 		<< endl<< "Digite sua Escolha: " <<endl;
@@ -33,13 +34,16 @@ int main (int argc, char const *argv[]){
 
 		switch (x){
 			case 1: 
-					listaConc.cadastrarCarro();
-					break;
-			case 2: 
 					listaConc.criarconcessionaria();
 					break;
+			case 2: 
+					listaConc.cadastrarCarro();
+					break;		
 			case 3:
 					listaConc.estoques();
+					break;
+			case 4:
+					listaConc.salvarConcessionaria();
 					break;
 			case 0:
 					cout<<endl<< "Ate mais!" << endl;

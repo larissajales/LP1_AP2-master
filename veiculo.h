@@ -26,10 +26,14 @@ class veiculo{
 		double getPreco();		 
 		string getChassi();
 		
-		string setMarca(std::string marca_); 
-		double setPreco(double preco_);
-		string setChassi(std::string chassi_);
+		void setMarca(string marca_); 
+		void setPreco(double preco_);
+		void setChassi(string chassi_);
+		
+		bool operator==(const veiculo &autom) const;
 
+		bool operator==(const string &marca) const;
+		
 	
 };
 

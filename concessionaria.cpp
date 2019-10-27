@@ -4,6 +4,7 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
+#include <fstream>
 
 #include "gerenciar.h"
 #include "concessionaria.h"
@@ -37,9 +38,9 @@ string concessionaria::get_nome(){
 }
 
 int concessionaria::get_cnpj(){
-	int cnpj_ = 0;
+//	int cnpj_ = 0;
 
-	cnpj = cnpj_;
+	//cnpj = cnpj_;
 	return cnpj; 
 }
 
@@ -84,7 +85,9 @@ bool concessionaria::add_carro(){
 		//		return false;	
 		//	}
 		//}
+		
 		listaConc_A.push_back(autom);
+		
 	
 	}
 	if (escolha == 2){
@@ -138,9 +141,8 @@ bool concessionaria::add_carro(){
 	//	}
 		listaConc_C.push_back(autom);
 	}
-	else{
+	else if(escolha != 1 && escolha !=2 && escolha != 3){
 		cout << endl << "Opcao invalida.\n\n";
-		add_carro();
 		
 	}
 	return true;
@@ -163,6 +165,15 @@ bool concessionaria::add_carro(){
 	}
 	return o;
 }
+ofstream& operator<<(ofstream &of, concessionaria &concessionaria){
+	for (vector<automovel*>::iterator i = concessionaria.listaConc_A.begin(); i != concessionaria.listaConc_A.end(); ++i)
+	{
+		of << (**i);
+	}
+	
+	return of;
+}
+
 
 
 

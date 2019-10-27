@@ -4,6 +4,7 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
+#include <fstream>
 
 #include "gerenciar.h"
 #include "moto.h"
@@ -40,10 +41,15 @@ void moto::setModelo(int modelo_){
 }
 
 ostream& operator<< (ostream &o, moto &veiculo_){
-	o << "> Marca: " << veiculo_.getMarca() << endl
+	o << "*********MOTO**********" << endl
+	  << "> Marca: " << veiculo_.getMarca() << endl
 	  << "> Preco: " << veiculo_.getPreco() << endl
-	  << "> Modelo: " << veiculo_.getModelo()<< endl
+	  << "> Modelo: " << veiculo_.getModelo()<< " (1-ESPORTIVO , 2-NORMAL)"<< endl
 	  << "> Numero do Chassi: " << veiculo_.getChassi() << endl;
+	return o;
+}
+ofstream& operator<< (ofstream &o, moto &veiculo){
+	o << "\"\";\"\";\""<< veiculo.getMarca()<<"\";\"" << veiculo.getPreco()<<"\";\""<< veiculo.getChassi()<<"\";\"\";" << veiculo.getModelo() <<"\""<< endl;
 	return o;
 }
 

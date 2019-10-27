@@ -3,6 +3,7 @@
 #define CONCESSIONARIA_H
 
 #include<iostream>
+#include <fstream>
 #include<vector>
 #include<string>
 #include<iterator>
@@ -52,6 +53,7 @@ public:
 
 
 	friend ostream& operator<< (ostream &o, concessionaria &concessionaria);
+	friend ofstream& operator<< (ofstream &o, concessionaria &concessionaria);
 	bool operator==(const concessionaria &conc) const;
 
 

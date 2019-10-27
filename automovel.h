@@ -5,6 +5,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include <iterator>
@@ -29,10 +30,10 @@ class automovel : public veiculo{
 		void setTipo_motor(int motor_);
 
 		friend ostream& operator << (ostream &o, automovel &veiculo);
+		friend ofstream& operator << (ofstream &o, automovel &veiculo);
+	//	bool operator==(const automovel &autom) const;
 
-		//bool operator==(const automovel &autom) const;
-
-		//bool operator==(const string &marca) const;
+	//	bool operator==(const string &marca) const;
 	
 };
 

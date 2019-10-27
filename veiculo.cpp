@@ -9,13 +9,13 @@
 #include "veiculo.h"
 
 
-string veiculo::setMarca(string marca_){
+void veiculo::setMarca(string marca_){
 	marca = marca_;
 }
-double veiculo::setPreco(double preco_){
+void veiculo::setPreco(double preco_){
 	preco = preco_;
 }
-string veiculo::setChassi(string chassi_){
+void veiculo::setChassi(string chassi_){
 	chassi = chassi_;
 }
 //**************************************************************************

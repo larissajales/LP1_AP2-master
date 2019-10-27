@@ -4,6 +4,7 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
+#include <fstream>
 
 #include "gerenciar.h"
 #include "caminhao.h"
@@ -40,10 +41,15 @@ void caminhao::setTipo_carga(int tipo_carga_){
 }
 
 ostream& operator<< (ostream &o, caminhao &veiculo_){
-	o << "> Marca: " << veiculo_.getMarca() << endl
+	o << "*********CAMINHAO******" << endl
+	  << "> Marca: " << veiculo_.getMarca() << endl
 	  << "> Preco: " << veiculo_.getPreco() << endl
-	  << "> Tipo de carga: " << veiculo_.getTipo_carga()<< endl
+	  << "> Tipo de carga: " << veiculo_.getTipo_carga() << " (1 NORMAL, 2 RISCO)" << endl
 	  << "> Numero do Chassi: " << veiculo_.getChassi() << endl;
+	return o;
+}
+ofstream& operator<< (ofstream &o, caminhao &veiculo){
+	o << "\"\";\"\";\""<< veiculo.getMarca()<<"\";\"" << veiculo.getPreco()<<"\";\""<< veiculo.getChassi()<<"\";\";\";\"" << veiculo.getTipo_carga() <<"\""<< endl;
 	return o;
 }
 

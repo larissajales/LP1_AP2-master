@@ -5,6 +5,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include <iterator>
@@ -28,6 +29,7 @@ class moto : public veiculo{
 
 
 		friend ostream& operator << (ostream &o, moto &veiculo_);
+		friend ofstream& operator << (ofstream &o, moto &veiculo);
 
 		//bool operator==(const moto &mot) const;
 

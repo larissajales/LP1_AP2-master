@@ -9,6 +9,7 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
+#include <fstream>
 
 #include "veiculo.h"
 
@@ -29,6 +30,7 @@ class caminhao : public veiculo{
 		void setTipo_carga(int tipo_carga_);
 
 		friend ostream& operator << (ostream &o, caminhao &veiculo);
+		friend ofstream& operator << (ofstream &o, caminhao &veiculo);
 
 		//bool operator==(const caminhao &cam) const;
 

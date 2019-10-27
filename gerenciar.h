@@ -27,7 +27,8 @@ public:
 	//~gerenciar();
 
 	concessionaria criarconcessionaria();
-
+	
+	void salvarConcessionaria();
 	void cadastrarCarro();
 	bool estoques();
 

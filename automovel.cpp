@@ -4,6 +4,7 @@
 #include <string>
 #include <iterator>
 #include <algorithm>
+#include <fstream>
 
 #include "gerenciar.h"
 #include "automovel.h"
@@ -13,18 +14,20 @@
 using namespace std;
 
 automovel::automovel(){
-	setMarca("");
-	setPreco(0);
-	setChassi("");
+	veiculo::setMarca("");
+	veiculo::setPreco(0);
+	veiculo::setChassi("");
 	setTipo_motor(0);
 	//++numeroCarros;
 }
 
-automovel::automovel(std::string marca_, double preco_, std::string chassi_,int motor_ ){
+automovel::automovel(string marca_, double preco_, string chassi_,int motor_ ){
+	tipo_motor = motor_;
 	setMarca(marca_);
 	setPreco(preco_);
 	setChassi(chassi_);
-	setTipo_motor(motor_);
+	
+	
 	//++numeroCarros;
 }
 //automovel::~automovel(){
@@ -41,15 +44,20 @@ void automovel::setTipo_motor(int motor_){
 
 
 ostream& operator<< (ostream &o, automovel &veiculo){
-	o << "> Marca: " << veiculo.getMarca() << endl
+	o << "*******AUTOMOVEL*******" << endl
+	  << "> Marca: " << veiculo.getMarca() << endl
 	  << "> Preco: " << veiculo.getPreco() << endl
-	  << "> Tipo motor: " << veiculo.getTipo_motor() << endl
+	  << "> Tipo motor: " << veiculo.getTipo_motor() << " (1-GASOLINA , 2-ELETRICO)"<< endl
 	  << "> Numero do Chassi: " << veiculo.getChassi()<< endl;
+	return o;
+}
+ofstream& operator<< (ofstream &o, automovel &veiculo){
+	o << "\"\";\"\";\""<< veiculo.getMarca()<<"\";\"" << veiculo.getPreco()<<"\";\""<< veiculo.getChassi()<<"\";\"" << veiculo.getTipo_motor() <<"\"\";\"\";\"\""<< endl;
 	return o;
 }
 
 //bool automovel::operator==(const automovel &autom) const {
-//	if (this->getMarca == autom.marca){
+//	if (this->getMarca = autom.gmarca
 //		return true;
 //	} else {
 //		return false;
