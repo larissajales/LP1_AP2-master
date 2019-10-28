@@ -25,7 +25,8 @@ private:
 public:
 	//gerenciar();
 	//~gerenciar();
-
+	
+	bool listarConcessionarias();
 	concessionaria criarconcessionaria();
 	concessionaria criarconcessionariaCSV();
 	

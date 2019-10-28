@@ -25,8 +25,9 @@ int main (int argc, char const *argv[]){
 		<< endl << "Escolha a opcao desejada"<<endl	
 		<< "Digite 1 - Criar Concessionaria"<< endl
 		<< "Digite 2 - Adicionar Automovel "<<endl
-		<< "Digite 3 - Lista de Automoveis"<< endl
-		<< "Digite 4 - Salvar concessionaria"<< endl
+		<< "Digite 3 - Detalhes Concessionaria "<<endl
+		<< "Digite 4 - Lista de Automoveis"<< endl
+		<< "Digite 5 - Salvar concessionaria"<< endl
 		<< "Digite 0 - Sair"<< endl
 		<< "++++++++++++++++++++++++++++++++"<<endl
 		<< endl<< "Digite sua Escolha: " <<endl;
@@ -52,11 +53,14 @@ int main (int argc, char const *argv[]){
 					 }					
 			case 2: 
 					listaConc.cadastrarCarro();
-					break;		
-			case 3:
+					break;	
+			case 3: 
+					listaConc.listarConcessionarias();
+					break;	
+			case 4:
 					listaConc.estoques();
 					break;
-			case 4:
+			case 5:
 					listaConc.salvarConcessionaria();
 					break;
 			case 0:

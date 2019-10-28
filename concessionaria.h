@@ -23,7 +23,9 @@ class concessionaria{
 
 private:
 	string nome;
-	int cnpj;
+	string primeiro_nome;
+	string sobrenome;
+	string cnpj;
 	vector<automovel*> listaConc_A;
 	vector<moto*> listaConc_M;
 	vector<caminhao*> listaConc_C;
@@ -38,10 +40,17 @@ public:
 //	~concessionaria();
 
 
-	concessionaria(string nome_, int cnpj_, const vector<automovel*>lista_A,const vector<moto*>lista_M,const vector<caminhao*>lista_C);
+	concessionaria(string nome_,string cnpj_, const vector<automovel*>lista_A,const vector<moto*>lista_M,const vector<caminhao*>lista_C);
+	concessionaria(string nome_, string primeiro_nome_,string sobrenome_,string cnpj_, const vector<automovel*>lista_A,const vector<moto*>lista_M,const vector<caminhao*>lista_C);
 	
 	string get_nome();
-	int get_cnpj();
+	string get_primeiro_nome();
+	string get_sobrenome();
+	string get_cnpj();
+	
+	int getSizeLista_A();
+	int getSizeLista_M();
+	int getSizeLista_C();
 	
 
 	bool add_carro();

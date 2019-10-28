@@ -49,7 +49,7 @@ ostream& operator<< (ostream &o, caminhao &veiculo_){
 	return o;
 }
 ofstream& operator<< (ofstream &o, caminhao &veiculo){
-	o << endl << ";;"<< veiculo.getMarca()<<";" << veiculo.getPreco()<<";"<< veiculo.getChassi()<<";;;" << veiculo.getTipo_carga();
+	o << endl << ";;;;"<< veiculo.getMarca()<<";" << veiculo.getPreco()<<";"<< veiculo.getChassi()<<";;;" << veiculo.getTipo_carga();
 	return o;
 }
 

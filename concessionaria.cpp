@@ -18,12 +18,20 @@ using namespace std;
 
 concessionaria::concessionaria(){
 	nome = "";
-	cnpj = 0;
-
-
+	cnpj = "";
 }
 
-concessionaria::concessionaria(std::string nome_, int cnpj_, const vector<automovel*>lista_A, const vector<moto*>lista_M,const vector<caminhao*>lista_C){
+concessionaria::concessionaria(string nome_, string primeiro_nome_,string sobrenome_, string cnpj_, const vector<automovel*>lista_A, const vector<moto*>lista_M,const vector<caminhao*>lista_C){
+	nome = nome_;
+	primeiro_nome = primeiro_nome_;
+	sobrenome = sobrenome_;
+	cnpj = cnpj_;
+	listaConc_A = lista_A;
+	listaConc_M = lista_M;
+	listaConc_C = lista_C;
+	++(++numeroConc);
+}
+concessionaria::concessionaria(string nome_, string cnpj_, const vector<automovel*>lista_A, const vector<moto*>lista_M,const vector<caminhao*>lista_C){
 	nome = nome_;
 	cnpj = cnpj_;
 	listaConc_A = lista_A;
@@ -32,16 +40,27 @@ concessionaria::concessionaria(std::string nome_, int cnpj_, const vector<automo
 	++(++numeroConc);
 }
 
-
+int concessionaria::getSizeLista_A(){
+	return listaConc_A.size();	
+}
+int concessionaria::getSizeLista_M(){
+	return listaConc_M.size();	
+}
+int concessionaria::getSizeLista_C(){
+	return listaConc_C.size();	
+}
+	
 
 string concessionaria::get_nome(){
 	return nome; 
 }
-
-int concessionaria::get_cnpj(){
-//	int cnpj_ = 0;
-
-	//cnpj = cnpj_;
+string concessionaria::get_primeiro_nome(){
+	return primeiro_nome; 
+}
+string concessionaria::get_sobrenome(){
+	return sobrenome; 
+}
+string concessionaria::get_cnpj(){
 	return cnpj; 
 }
 
@@ -92,7 +111,6 @@ bool concessionaria::add_carro(){
 		cin >> motor;
 		
 		automovel *autom = new automovel(marca, preco, chassi,motor);
-		
 		
 		//for (vector<automovel*>::iterator it = listaConc_A.begin(); it != listaConc_A.end(); ++it){
 		//	if (**it == *autom){
