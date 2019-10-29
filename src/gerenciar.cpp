@@ -75,6 +75,7 @@ concessionaria gerenciar::criarconcessionaria(){
 concessionaria gerenciar::criarconcessionariaCSV(){
 	string arq,NOME_CONC,NOME_P,SOBRENOME,CNPJ,MARCA,PRECO,CHASSI,MOTOR,MODELO,CARGA,DATA; 
 	int motorr,modeloo,cargaa;
+	concessionaria aux;
 	string nomeConcAux,pNomeAux, sobrenomeAux,cnpjAux;
 	double precoo;	
 	vector<automovel*> listaConc_A;
@@ -85,7 +86,7 @@ concessionaria gerenciar::criarconcessionariaCSV(){
 	cin>>arq;
 	
 	ifstream arquivoE;
-	arquivoE.open(arq+".csv");	
+	arquivoE.open("arquivos\\"+arq+".csv");	
 	if(arquivoE.is_open()){		
 		while(arquivoE.good()){
 			getline	(arquivoE,NOME_CONC,';');
@@ -142,6 +143,7 @@ concessionaria gerenciar::criarconcessionariaCSV(){
 			
 			if (CNPJ != "" && CNPJ != "CNPJ" && NOME_P != "" && NOME_P != "NOME" ){			
 					concessionaria *novaConc = new concessionaria(nomeConcAux,pNomeAux,sobrenomeAux,cnpjAux,listaConc_A,listaConc_M,listaConc_C);
+					aux = *novaConc;
 					listaLoja.push_back(novaConc);				
 				}
 			else{
@@ -172,6 +174,8 @@ concessionaria gerenciar::criarconcessionariaCSV(){
 		cout << "Erro ao abrir arquivo. Verifique se o nome esta correto. "<< endl;	
 	}
 	
+	return aux;
+	
 }
 
 
@@ -190,7 +194,7 @@ void gerenciar::salvarConcessionaria(){
 		if ((**it).get_nome() == nome){
 			status = existe;
 			ofstream arquivo;
-			arquivo.open(nome+".csv");
+			arquivo.open("arquivos\\"+nome+".csv");
 			arquivo << "NOME CONC;NOME;SOBRENOME;CNPJ;MARCA;PRECO;CHASSI;MOTOR;MODELO;CARGA;DATA"<< endl;
 			
 			string cnpjAux = (**it).get_cnpj();
@@ -284,9 +288,9 @@ bool gerenciar::listarConcessionarias(){
 	getline(cin,nome);
 	for ( vector<concessionaria*>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it){
 		if ((**it).get_nome() == nome){
-			string cnpjAux = (**it).get_cnpj();
+
 			cout << endl << " Concessionaria " << nome << endl<< endl;
-			if ( cnpjAux == ""){
+			if ( (**it).get_cnpj() == ""){
 				cout << " Proprietario " << (**it).get_primeiro_nome() << " " << (**it).get_sobrenome() << endl;	
 			}
 			else{
