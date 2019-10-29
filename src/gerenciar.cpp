@@ -188,11 +188,9 @@ void gerenciar::salvarConcessionaria(){
 	string nome;
 	cin.ignore(200,'\n');
 	getline(cin,nome);
-	statusConc status = inexistente;
 		
 	for (vector<concessionaria*>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it){
 		if ((**it).get_nome() == nome){
-			status = existe;
 			ofstream arquivo;
 			arquivo.open(nome+".csv");
 			arquivo << "NOME CONC;NOME;SOBRENOME;CNPJ;MARCA;PRECO;CHASSI;MOTOR;MODELO;CARGA;DATA"<< endl;

@@ -24,7 +24,8 @@ void veiculo::setData(){
 	data = ctime(&now);
 	
 	string aux;
-	for (int i = 0; i < data.size() -1; i++){
+	int tamanho = data.size() -1;
+	for (int i = 0; i < tamanho; i++){
 		aux += data[i];
 	}
 	setData(aux);

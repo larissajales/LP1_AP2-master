@@ -37,7 +37,7 @@ concessionaria.o: src/concessionaria.cpp
 mainAP.o: src/mainAP.cpp
 	@$(CC) $(CPPFLAGS) -c -Iinclude src/mainAP.cpp
 	@echo "Aguarde..."
-	@echo "Pronto!!!Para mais informações digite o comando --> ./AP2\n"
+	@echo "Pronto!!!\nPara mais informações digite o comando --> ./AP2\n"
 clean:
 	@rm -rf AP2
 	@echo "Diretorio limpo"
