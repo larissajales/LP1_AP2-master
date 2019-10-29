@@ -86,7 +86,7 @@ concessionaria gerenciar::criarconcessionariaCSV(){
 	cin>>arq;
 	
 	ifstream arquivoE;
-	arquivoE.open("arquivos\\"+arq+".csv");	
+	arquivoE.open(arq+".csv");	
 	if(arquivoE.is_open()){		
 		while(arquivoE.good()){
 			getline	(arquivoE,NOME_CONC,';');
@@ -194,7 +194,7 @@ void gerenciar::salvarConcessionaria(){
 		if ((**it).get_nome() == nome){
 			status = existe;
 			ofstream arquivo;
-			arquivo.open("arquivos\\"+nome+".csv");
+			arquivo.open(nome+".csv");
 			arquivo << "NOME CONC;NOME;SOBRENOME;CNPJ;MARCA;PRECO;CHASSI;MOTOR;MODELO;CARGA;DATA"<< endl;
 			
 			string cnpjAux = (**it).get_cnpj();
@@ -297,8 +297,8 @@ bool gerenciar::listarConcessionarias(){
 				cout << endl << " CNJP " << (**it).get_cnpj() << endl;
 			}
 			cout << " Fronta total de Automoveis : " << (**it).getSizeLista_A() << endl;
-			cout << " Fronta total de Moto       : " << (**it).getSizeLista_M() << endl;
-			cout << " Fronta total de Caminhao   : " << (**it).getSizeLista_C() << endl;
+			cout << " Fronta total de Motos      : " << (**it).getSizeLista_M() << endl;
+			cout << " Fronta total de Caminhoes  : " << (**it).getSizeLista_C() << endl;
 			cout << " Total de Veiculos          : " << (**it).getSizeLista_A()+ (**it).getSizeLista_M() + (**it).getSizeLista_C() << endl;
 			return true;
 		}
